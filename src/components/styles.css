@@ -1,0 +1,86 @@
+#dashboard {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: white;
+    
+    left: -10%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 50px;
+    padding: 50px;
+    gap: 40px;
+    margin: auto
+}
+
+#dashboardCard {
+    width: 300px;
+    min-width: 200px;
+    min-height: 150px;
+    /* background-color: rgb(255, 255, 255); */
+    background: linear-gradient(to bottom,rgb(51, 51, 111), rgb(95, 95, 184));
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+    gap: 20px;
+    transition:all 1s  ease-in-out;
+}
+
+#dashboardCard:hover{
+    transform: scale(1.3, 1.3); 
+}
+
+#Area_Icon{
+    display:flex;
+    flex-direction: row;
+    gap:20px
+}
+
+#Area_Icon h4{
+    color:white
+}
+#drawerList{
+    display: flex;
+    flex-direction: row;
+    justify-content: center!important;
+}
+
+#TaskInputModal{
+    width:auto;
+    margin-top:80px;
+}
+
+#formModal{
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    gap:30px;
+    margin-top: 20px;
+}
+
+#formModal Button{
+    width:80px;
+    margin:auto
+}
+
+#titleHeader{
+    background-color: rgba(128, 128, 128, 0.187);
+}
+
+#tasks{
+    display: flex;
+    flex-direction: column;
+}
+
+#tasks p{
+    font-size: small;
+    color:white
+ 
+}

@@ -1,25 +1,36 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Helloworld } from './components/helloworld';
+import { Mobilelayout } from './components/Layouts/Mobilelayout';
+import { WebLayout } from './components/Layouts/webLayout';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import './components/styles.css';
+import { Dashboard } from './components/dashboard';
+import { Box, Theme, useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 function App() {
+
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+
+  const browserRouter = createBrowserRouter([{
+    path: "/",
+    element : matches? <Mobilelayout/> : <WebLayout/> ,
+    children: [{
+      index: true,
+      element: <Dashboard />
+    }
+    ]
+  }
+  ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <RouterProvider router={browserRouter} />
+    </>
   );
 }
 
